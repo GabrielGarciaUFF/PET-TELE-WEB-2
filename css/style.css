@@ -108,7 +108,8 @@ header .stat-value {
 }
 
 /* Botões */
-.btn-apply, .btn-clear {
+.btn-apply,
+.btn-clear {
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: var(--raio-borda);
@@ -201,9 +202,17 @@ main {
   color: #fff;
 }
 
-.badge-pet { background-color: #28a745; }
-.badge-propet { background-color: #fd7e14; }
-.badge-type { background-color: #17a2b8; }
+.badge-pet {
+  background-color: #28a745;
+}
+
+.badge-propet {
+  background-color: #fd7e14;
+}
+
+.badge-type {
+  background-color: #17a2b8;
+}
 
 .card-preview .preview-item {
   display: flex;
@@ -260,10 +269,22 @@ main {
   transition: opacity 0.3s;
 }
 
-.card-link:hover { opacity: 0.85; }
-.card-link-email { background-color: #6c757d; }
-.card-link-website { background-color: #007bff; }
-.card-link-lattes { background-color: #17a2b8; }
+.card-link:hover {
+  opacity: 0.85;
+}
+
+.card-link-email {
+  background-color: #6c757d;
+}
+
+.card-link-website {
+  background-color: #007bff;
+}
+
+.card-link-lattes {
+  background-color: #17a2b8;
+}
+
 .card-link-instagram {
   background: #d6249f;
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
@@ -293,6 +314,7 @@ footer {
   header h1 {
     font-size: 2rem;
   }
+
   .filters-form .filters-row,
   .card-container {
     grid-template-columns: 1fr;

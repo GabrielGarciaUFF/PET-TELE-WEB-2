@@ -1,15 +1,23 @@
-[
-    {
-        "groupName": "ProPet-Ciranda Rural (Interdisciplinar)",
-        "category": "ProPET",
-        "type": "Conexão de saberes",
-        "creationDate": "2013",
-        "tutor": "Profª Maria do Socorro Bezerra de Lima",
-        "lattes": "http://lattes.cnpq.br/7242069369733236",
-        "contactEmail": "sblima22@gmail.com",
-        "website": "https://linktr.ee/petcirandarural",
-        "instagram": "petcirandarural",
-        "address": "Rua José do Patrocínio, 71 - Campus de Campos do Goytacazes, Centro, Campos dos Goytacazes",
-        "campus": "Campos dos Goytacazes"
-    }
-]
+{
+ "grupos_propet_conexao_uff": [
+  {"nome"     : "ProPET-Ciranda Rural (Interdisciplinar)",
+   "criacao"  : ["08","2013"],
+   "website"  : "https://linktr.ee/petcirandaruralu.ffcampos",
+   "instagram": "https://www.instagram.com/petcirandarural",
+   "facebook" : "https://www.facebook.com/PetCirandaRural",
+   "youtube"  : "https://www.youtube.com/???",
+   "outros"   : "",
+   "email"    : "",
+   "local"    : " Rua José do Patrocı́nio, 71 - Polo Universitário de Campos dos Goytacazes - Centro - Campos dos Goytacazes.",
+   "tutor"    : {
+                 "nome"   : "Profª Maria do Socorro B. de Lima",
+                 "lattes" : "http://lattes.cnpq.br/7242069369733236",
+                 "webpage": "",
+                 "email"  : "msblima@id.uff.br",
+                 "local"  : ""
+                }
+  }
+ ]
+
+
+}
