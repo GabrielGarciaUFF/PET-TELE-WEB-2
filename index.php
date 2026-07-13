@@ -16,7 +16,7 @@ function loadPetData() {
 
             if (is_array($items)) {
                 foreach ($items as &$item) {
-                    // O novo JSON não tem categoria/tipo/campus separados. 
+                    // O novo JSON não tem categoria/tipo/campus separados.
                     // Tive que deduzir esses dados para não quebrar os filtros do front.
 
                     // Categoria (PET ou ProPET)
