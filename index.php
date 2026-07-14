@@ -1,5 +1,15 @@
 <?php
 
+// Verifica se um campo tem valor válido (ignora vazio e placeholders "???")
+function hasValue($value) {
+    if (empty($value)) return false;
+    $trimmed = trim($value);
+    if ($trimmed === '???') return false;
+    // cobre casos tipo "https://www.youtube.com/???"
+    if (stripos($trimmed, '/???') !== false) return false;
+    return true;
+}
+
 // Função para carregar os dados dos grupos PET/ProPET
 function loadPetData() {
     $data = [];
@@ -9,32 +19,34 @@ function loadPetData() {
         $jsonData = json_decode($jsonContent, true);
         
         if (is_array($jsonData)) {
-            // O JSON novo tem uma chave raiz variável (ex: "grupos_propet_curso_uff")
-            // Usei o reset() para ignorar o nome dessa chave e pegar logo o array de grupos
-            $items = reset($jsonData); 
-            $rootKey = key($jsonData);
+            // Chave raiz variável (ex: "grupos_pet_mec_conexao_uff", "grupos_propet_ies_curso_uff")
+            // reset() ignora o nome da chave e pega logo o array de grupos
+            $items = reset($jsonData);
 
             if (is_array($items)) {
-                foreach ($items as &$item) {
-                    // O novo JSON não tem categoria/tipo/campus separados.
-                    // Tive que deduzir esses dados para não quebrar os filtros do front.
+                foreach ($items as $item) {
+                    // Novo padrão: cada item vem separado em "grupo" e "tutor"
+                    $grupo = $item['grupo'] ?? [];
+                    $tutor = $item['tutor'] ?? [];
 
-                    // Categoria (PET ou ProPET)
-                    $item['category'] = (stripos($item['nome'], 'ProPET') !== false || stripos($rootKey, 'propet') !== false) ? 'ProPET' : 'PET';
-                    
-                    // Tipo (Conexão ou Curso Único)
-                    $item['type'] = (stripos($rootKey, 'conexao') !== false) ? 'Conexão de saberes' : 'Curso Único';
-                    
-                    // Campus (buscando o nome da cidade dentro da string de endereço)
-                    $local = $item['local'] ?? '';
-                    if (stripos($local, 'Niterói') !== false) $item['campus'] = 'Niterói';
-                    elseif (stripos($local, 'Nova Friburgo') !== false) $item['campus'] = 'Nova Friburgo';
-                    elseif (stripos($local, 'Rio das Ostras') !== false) $item['campus'] = 'Rio das Ostras';
-                    elseif (stripos($local, 'Volta Redonda') !== false) $item['campus'] = 'Volta Redonda';
-                    elseif (stripos($local, 'Campos dos Goytacazes') !== false || stripos($local, 'Campo dos Goytacazes') !== false) $item['campus'] = 'Campos dos Goytacazes';
-                    else $item['campus'] = 'Não informado';
+                    // "Achato" o item de novo (grupo + tutor), pra não ter que
+                    // reescrever o resto do arquivo que usa $group['nome'], $group['campus'] etc.
+                    $flatItem = $grupo;
+                    $flatItem['tutor'] = $tutor;
+
+                    // Categoria agora vem do campo "origem": MEC = PET, IES = ProPET
+                    $flatItem['category'] = (strtoupper($grupo['origem'] ?? '') === 'IES') ? 'ProPET' : 'PET';
+
+                    // Tipo agora vem do campo "tipo": CONEXAO ou CURSO
+                    $flatItem['type'] = (strtoupper($grupo['tipo'] ?? '') === 'CURSO') ? 'Curso Único' : 'Conexão de saberes';
+
+                    // Campus já vem pronto no JSON (nome oficial da localidade da UFF)
+                    if (!hasValue($flatItem['campus'] ?? '')) {
+                        $flatItem['campus'] = 'Não informado';
+                    }
+
+                    $data[] = $flatItem;
                 }
-                $data = array_merge($data, $items);
             }
         }
     }
@@ -296,14 +308,14 @@ $propetGroups = count(array_filter($allData, function($item) { return $item['cat
                                             <div class="content-section">
                                                 <h3>Contato e Links</h3>
                                                 <div class="card-links">
-                                                    <?php if (!empty($group['email'])): ?>
+                                                    <?php if (hasValue($group['email'] ?? '')): ?>
                                                         <a href="mailto:<?php echo htmlspecialchars($group['email']); ?>" 
                                                            class="card-link card-link-email" title="Enviar e-mail">
                                                            <i class="fas fa-envelope"></i> E-mail
                                                         </a>
                                                     <?php endif; ?>
                                                     
-                                                    <?php if (!empty($group['website'])): ?>
+                                                    <?php if (hasValue($group['website'] ?? '')): ?>
                                                         <a href="<?php echo htmlspecialchars($group['website']); ?>" 
                                                            target="_blank" rel="noopener noreferrer" 
                                                            class="card-link card-link-website" title="Visitar site">
@@ -311,7 +323,7 @@ $propetGroups = count(array_filter($allData, function($item) { return $item['cat
                                                         </a>
                                                     <?php endif; ?>
                                                     
-                                                    <?php if (!empty($group['tutor']['lattes'])): ?>
+                                                    <?php if (hasValue($group['tutor']['lattes'] ?? '')): ?>
                                                         <a href="<?php echo htmlspecialchars($group['tutor']['lattes']); ?>" 
                                                            target="_blank" rel="noopener noreferrer" 
                                                            class="card-link card-link-lattes" title="Ver currículo Lattes">
@@ -319,11 +331,27 @@ $propetGroups = count(array_filter($allData, function($item) { return $item['cat
                                                         </a>
                                                     <?php endif; ?>
                                                     
-                                                    <?php if (!empty($group['instagram'])): ?>
+                                                    <?php if (hasValue($group['instagram'] ?? '')): ?>
                                                         <a href="<?php echo htmlspecialchars($group['instagram']); ?>" 
                                                            target="_blank" rel="noopener noreferrer" 
                                                            class="card-link card-link-instagram" title="Ver Instagram">
                                                            <i class="fab fa-instagram"></i> Instagram
+                                                        </a>
+                                                    <?php endif; ?>
+
+                                                    <?php if (hasValue($group['facebook'] ?? '')): ?>
+                                                        <a href="<?php echo htmlspecialchars($group['facebook']); ?>" 
+                                                           target="_blank" rel="noopener noreferrer" 
+                                                           class="card-link card-link-facebook" title="Ver Facebook">
+                                                           <i class="fab fa-facebook"></i> Facebook
+                                                        </a>
+                                                    <?php endif; ?>
+
+                                                    <?php if (hasValue($group['youtube'] ?? '')): ?>
+                                                        <a href="<?php echo htmlspecialchars($group['youtube']); ?>" 
+                                                           target="_blank" rel="noopener noreferrer" 
+                                                           class="card-link card-link-youtube" title="Ver YouTube">
+                                                           <i class="fab fa-youtube"></i> YouTube
                                                         </a>
                                                     <?php endif; ?>
                                                 </div>
