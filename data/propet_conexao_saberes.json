@@ -1,23 +1,27 @@
 {
- "grupos_propet_conexao_uff": [
-  {"nome"     : "ProPET-Ciranda Rural (Interdisciplinar)",
-   "criacao"  : ["08","2013"],
-   "website"  : "https://linktr.ee/petcirandaruralu.ffcampos",
-   "instagram": "https://www.instagram.com/petcirandarural",
-   "facebook" : "https://www.facebook.com/PetCirandaRural",
-   "youtube"  : "https://www.youtube.com/???",
-   "outros"   : "",
-   "email"    : "",
-   "local"    : " Rua José do Patrocı́nio, 71 - Polo Universitário de Campos dos Goytacazes - Centro - Campos dos Goytacazes.",
-   "tutor"    : {
-                 "nome"   : "Profª Maria do Socorro B. de Lima",
-                 "lattes" : "http://lattes.cnpq.br/7242069369733236",
-                 "webpage": "",
-                 "email"  : "msblima@id.uff.br",
-                 "local"  : ""
-                }
-  }
- ]
-
-
+ "grupos_propet_ies_conexao_uff": [
+  {
+   "grupo":{
+             "nome": "ProPET-Ciranda Rural (Interdisciplinar)",
+             "origem": "IES",
+             "tipo": "CONEXAO",
+             "criacao": ["08", "2013"],
+             "website": "https://linktr.ee/petcirandaruralu.ffcampos",
+             "instagram": "https://www.instagram.com/petcirandarural",
+             "facebook": "https://www.facebook.com/PetCirandaRural",
+             "youtube": "",
+             "outros": "",
+             "email": "",
+             "campus": "Campos dos Goytacazes",
+             "local": "Rua José do Patrocı́nio, 71, Polo Universitário de Campos dos Goytacazes, Centro, Campos dos Goytacazes."
+                },
+    "tutor": {
+             "nome": "Profª Maria do Socorro B. de Lima",
+             "lattes": "",
+             "webpage": "",
+             "email": "msblima@id.uff.br",
+             "local": ""
+            }
+    }
+  ]
 }
