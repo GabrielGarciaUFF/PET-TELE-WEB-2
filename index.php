@@ -355,7 +355,7 @@ $propetGroups = count(array_filter($allData, function($item) { return $item['cat
     </main>
 
     <footer>
-        <p><i class="fas fa-rocket"></i> Projeto PET-Tele — Webpage Dinâmica com PHP e JSON (UFF, 2025)</p>
+        <p><i class="fas fa-rocket"></i> Projeto PET-Tele — Webpage Dinâmica com PHP e JSON (UFF, 2026)</p>
     </footer>
 </body>
 </html>
