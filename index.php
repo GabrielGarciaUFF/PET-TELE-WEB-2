@@ -1,15 +1,5 @@
 <?php
 
-// Verifica se um campo tem valor válido (ignora vazio e placeholders "???")
-function hasValue($value) {
-    if (empty($value)) return false;
-    $trimmed = trim($value);
-    if ($trimmed === '???') return false;
-    // cobre casos tipo "https://www.youtube.com/???"
-    if (stripos($trimmed, '/???') !== false) return false;
-    return true;
-}
-
 // Função para carregar os dados dos grupos PET/ProPET
 function loadPetData() {
     $data = [];
@@ -19,29 +9,26 @@ function loadPetData() {
         $jsonData = json_decode($jsonContent, true);
         
         if (is_array($jsonData)) {
-            // Chave raiz variável (ex: "grupos_pet_mec_conexao_uff", "grupos_propet_ies_curso_uff")
-            // reset() ignora o nome da chave e pega logo o array de grupos
+            // A chave raiz muda de arquivo pra arquivo (ex: "grupos_pet_mec_conexao_uff")
+            // então uso reset() pra pegar o array de grupos direto, sem depender do nome dela
             $items = reset($jsonData);
 
             if (is_array($items)) {
                 foreach ($items as $item) {
-                    // Novo padrão: cada item vem separado em "grupo" e "tutor"
-                    $grupo = $item['grupo'] ?? [];
-                    $tutor = $item['tutor'] ?? [];
-
-                    // "Achato" o item de novo (grupo + tutor), pra não ter que
-                    // reescrever o resto do arquivo que usa $group['nome'], $group['campus'] etc.
+                    // Agora o JSON separa "grupo" e "tutor", então junto os dois de volta
+                    // num item só pra não ter que mexer no resto do código (filtros, cards etc)
+                    $grupo = $item['grupo'];
                     $flatItem = $grupo;
-                    $flatItem['tutor'] = $tutor;
+                    $flatItem['tutor'] = $item['tutor'];
 
-                    // Categoria agora vem do campo "origem": MEC = PET, IES = ProPET
-                    $flatItem['category'] = (strtoupper($grupo['origem'] ?? '') === 'IES') ? 'ProPET' : 'PET';
+                    // origem MEC = PET, origem IES = ProPET
+                    $flatItem['category'] = ($grupo['origem'] === 'IES') ? 'ProPET' : 'PET';
 
-                    // Tipo agora vem do campo "tipo": CONEXAO ou CURSO
-                    $flatItem['type'] = (strtoupper($grupo['tipo'] ?? '') === 'CURSO') ? 'Curso Único' : 'Conexão de saberes';
+                    // tipo CONEXAO ou CURSO
+                    $flatItem['type'] = ($grupo['tipo'] === 'CURSO') ? 'Curso Único' : 'Conexão de saberes';
 
-                    // Campus já vem pronto no JSON (nome oficial da localidade da UFF)
-                    if (!hasValue($flatItem['campus'] ?? '')) {
+                    // campus já vem certinho no JSON, só cobre o caso de vir vazio
+                    if (empty($flatItem['campus'])) {
                         $flatItem['campus'] = 'Não informado';
                     }
 
@@ -308,14 +295,14 @@ $propetGroups = count(array_filter($allData, function($item) { return $item['cat
                                             <div class="content-section">
                                                 <h3>Contato e Links</h3>
                                                 <div class="card-links">
-                                                    <?php if (hasValue($group['email'] ?? '')): ?>
+                                                    <?php if (!empty($group['email'])): ?>
                                                         <a href="mailto:<?php echo htmlspecialchars($group['email']); ?>" 
                                                            class="card-link card-link-email" title="Enviar e-mail">
                                                            <i class="fas fa-envelope"></i> E-mail
                                                         </a>
                                                     <?php endif; ?>
                                                     
-                                                    <?php if (hasValue($group['website'] ?? '')): ?>
+                                                    <?php if (!empty($group['website'])): ?>
                                                         <a href="<?php echo htmlspecialchars($group['website']); ?>" 
                                                            target="_blank" rel="noopener noreferrer" 
                                                            class="card-link card-link-website" title="Visitar site">
@@ -323,7 +310,7 @@ $propetGroups = count(array_filter($allData, function($item) { return $item['cat
                                                         </a>
                                                     <?php endif; ?>
                                                     
-                                                    <?php if (hasValue($group['tutor']['lattes'] ?? '')): ?>
+                                                    <?php if (!empty($group['tutor']['lattes'])): ?>
                                                         <a href="<?php echo htmlspecialchars($group['tutor']['lattes']); ?>" 
                                                            target="_blank" rel="noopener noreferrer" 
                                                            class="card-link card-link-lattes" title="Ver currículo Lattes">
@@ -331,7 +318,7 @@ $propetGroups = count(array_filter($allData, function($item) { return $item['cat
                                                         </a>
                                                     <?php endif; ?>
                                                     
-                                                    <?php if (hasValue($group['instagram'] ?? '')): ?>
+                                                    <?php if (!empty($group['instagram'])): ?>
                                                         <a href="<?php echo htmlspecialchars($group['instagram']); ?>" 
                                                            target="_blank" rel="noopener noreferrer" 
                                                            class="card-link card-link-instagram" title="Ver Instagram">
@@ -339,7 +326,7 @@ $propetGroups = count(array_filter($allData, function($item) { return $item['cat
                                                         </a>
                                                     <?php endif; ?>
 
-                                                    <?php if (hasValue($group['facebook'] ?? '')): ?>
+                                                    <?php if (!empty($group['facebook'])): ?>
                                                         <a href="<?php echo htmlspecialchars($group['facebook']); ?>" 
                                                            target="_blank" rel="noopener noreferrer" 
                                                            class="card-link card-link-facebook" title="Ver Facebook">
@@ -347,7 +334,7 @@ $propetGroups = count(array_filter($allData, function($item) { return $item['cat
                                                         </a>
                                                     <?php endif; ?>
 
-                                                    <?php if (hasValue($group['youtube'] ?? '')): ?>
+                                                    <?php if (!empty($group['youtube'])): ?>
                                                         <a href="<?php echo htmlspecialchars($group['youtube']); ?>" 
                                                            target="_blank" rel="noopener noreferrer" 
                                                            class="card-link card-link-youtube" title="Ver YouTube">
