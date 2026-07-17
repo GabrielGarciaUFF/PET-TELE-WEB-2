@@ -15,13 +15,13 @@
              "campus"   : "Volta Redonda",
              "local"    : "Rua Desembargador Ellis Hermydio Figueira, 783 / Sala 211A - Campus Aterrado - Polo Universitário de Volta Redonda - Volta Redonda - RJ."
             },
-   "tutor" : {
-              "nome"   : "Prof. Luis Henrique Abegão",
-              "lattes" : "http://lattes.cnpq.br/0120186184960651",
-              "webpage": "",
-              "email"  : "lhabegao@id.uff.br",
-              "local"  : ""
-             }
+   "tutor": {
+             "nome"   : "Prof. Luis Henrique Abegão",
+             "lattes" : "http://lattes.cnpq.br/0120186184960651",
+             "webpage": "",
+             "email"  : "lhabegao@id.uff.br",
+             "local"  : ""
+            }
   },
   {
    "grupo": {
@@ -38,13 +38,13 @@
              "campus"   : "Niterói",
              "local"    : "Rua Professor Marcos Waldemar de Freitas Reis, s/n / Bloco F / Sala 521 - Campus do Gragoatá - São Domingos - Niterói."
             },
-   "tutor" : {
-              "nome"   : "Profª Bianca Aires Imbiriba Di Maio Bonente",
-              "lattes" : "http://lattes.cnpq.br/2178669113436768",
-              "webpage": "",
-              "email"  : "biancabonente@id.uff.br",
-              "local"  : ""
-             }
+   "tutor": {
+             "nome"   : "Profª Bianca Aires Imbiriba Di Maio Bonente",
+             "lattes" : "http://lattes.cnpq.br/2178669113436768",
+             "webpage": "",
+             "email"  : "biancabonente@id.uff.br",
+             "local"  : ""
+            }
   },
   {
    "grupo": {
@@ -61,13 +61,13 @@
              "campus"   : "Niterói",
              "local"    : "Rua Passo da Pátria, 156 / Bloco E / Sala s/n (em frente ao elevador no 1º andar) - Campus da Praia Vermelha - São Domingos - Niterói."
             },
-   "tutor" : {
-              "nome"   : "Prof. Carlos Rodrigues Pereira",
-              "lattes" : "http://lattes.cnpq.br/4424174602474669",
-              "webpage": "",
-              "email"  : "crpereira@id.uff.br",
-              "local"  : "Rua Passo da Pátria, 156 / Bloco D / Sala ??? - Campus da Praia Vermelha - São Domingos - Niterói."
-             }
+   "tutor": {
+             "nome"   : "Prof. Carlos Rodrigues Pereira",
+             "lattes" : "http://lattes.cnpq.br/4424174602474669",
+             "webpage": "",
+             "email"  : "crpereira@id.uff.br",
+             "local"  : "Rua Passo da Pátria, 156 / Bloco D / Sala ??? - Campus da Praia Vermelha - São Domingos - Niterói."
+            }
   },
   {
    "grupo": {
@@ -84,13 +84,13 @@
              "campus"   : "Niterói",
              "local"    : "Rua Passo da Pátria, 156 / Bloco E / Sala 249 - Campus da Praia Vermelha - São Domingos - Niterói - RJ."
             },
-   "tutor" : {
-              "nome"   : "Prof. Alexandre Santos de la Vega",
-              "lattes" : "https://lattes.cnpq.br/6959413561536366",
-              "webpage": "https://www.telecom.uff.br/~delavega",
-              "email"  : "alexandresantoslavega@id.uff.br",
-              "local"  : "Rua Passo da Pátria, 156 / Bloco D / Sala 424 - Campus da Praia Vermelha - São Domingos - Niterói - RJ."
-             }
+   "tutor": {
+             "nome"   : "Prof. Alexandre Santos de la Vega",
+             "lattes" : "https://lattes.cnpq.br/6959413561536366",
+             "webpage": "https://www.telecom.uff.br/~delavega",
+             "email"  : "alexandresantoslavega@id.uff.br",
+             "local"  : "Rua Passo da Pátria, 156 / Bloco D / Sala 424 - Campus da Praia Vermelha - São Domingos - Niterói - RJ."
+            }
   },
   {
    "grupo": {
@@ -107,13 +107,13 @@
              "campus"   : "Niterói",
              "local"    : "Rua Passo da Pátria, 156 / Bloco E / Sala 218 - Campus da Praia Vermelha - São Domingos - Niterói."
             },
-   "tutor" : {
-              "nome"   : "Profª Fabiana Rodrigues Leta",
-              "lattes" : "http://lattes.cnpq.br/5364548256245450",
-              "webpage": "",
-              "email"  : "fabianaleta@id.uff.br",
-              "local"  : "Rua Passo da Pátria, 156 / Bloco D / Sala 410 - Campus da Praia Vermelha - São Domingos - Niterói."
-             }
+   "tutor": {
+             "nome"   : "Profª Fabiana Rodrigues Leta",
+             "lattes" : "http://lattes.cnpq.br/5364548256245450",
+             "webpage": "",
+             "email"  : "fabianaleta@id.uff.br",
+             "local"  : "Rua Passo da Pátria, 156 / Bloco D / Sala 410 - Campus da Praia Vermelha - São Domingos - Niterói."
+            }
   },
   {
    "grupo": {
@@ -130,13 +130,13 @@
              "campus"   : "Niterói",
              "local"    : "Av. Gal. Milton Tavares de Souza, s/n / Bloco O / Sala 205 - Instituto de Geociências - Campus da Praia Vermelha - São Domingos - Niterói."
             },
-   "tutor" : {
-              "nome"   : "Prof. Sergio Luiz Nunes Pereira",
-              "lattes" : "http://lattes.cnpq.br/2939458462753830",
-              "webpage": "",
-              "email"  : "snunes@id.uff.br",
-              "local"  : "Av. Gal. Milton Tavares de Souza, s/n / Bloco O / Sala 536 - Instituto de Geociências - Campus da Praia Vermelha - São Domingos - Niterói."
-             }
+   "tutor": {
+             "nome"   : "Prof. Sergio Luiz Nunes Pereira",
+             "lattes" : "http://lattes.cnpq.br/2939458462753830",
+             "webpage": "",
+             "email"  : "snunes@id.uff.br",
+             "local"  : "Av. Gal. Milton Tavares de Souza, s/n / Bloco O / Sala 536 - Instituto de Geociências - Campus da Praia Vermelha - São Domingos - Niterói."
+            }
   },
   {
    "grupo": {
@@ -153,14 +153,14 @@
              "campus"   : "Nova Friburgo",
              "local"    : "Rua Dr. Sílvio Henrique Braune, 22 - Polo Universitário de Nova Friburgo - Centro - Nova Friburgo."
             },
-   "tutor" : {
-              "nome"    : "Profª Angela Scarparo",
-              "lattes"  : "http://lattes.cnpq.br/7743848766819903",
-              "webpage" : "",
-              "email"   : "angelascarparo@id.uff.br",
-              "local"   : "",
-              "_comment": "Profª Angela Scarparo Caldo Teixeira"
-             }
+   "tutor": {
+             "nome"    : "Profª Angela Scarparo",
+             "lattes"  : "http://lattes.cnpq.br/7743848766819903",
+             "webpage" : "",
+             "email"   : "angelascarparo@id.uff.br",
+             "local"   : "",
+             "_comment": "Profª Angela Scarparo Caldo Teixeira"
+            }
   },
   {
    "grupo": {
@@ -177,13 +177,13 @@
              "campus"   : "Niterói",
              "local"    : "Rua Professor Marcos Waldemar de Freitas Reis, s/n / Bloco J - Campus do Gragoatá - São Domingos - Niterói."
             },
-   "tutor" : {
-              "nome"   : "Profª Rachel Bertol",
-              "lattes" : "http://lattes.cnpq.br/6048950036951543",
-              "webpage": "",
-              "email"  : "rachelbertol@id.uff.br",
-              "local"  : "Rua Professor Marcos Waldemar de Freitas Reis, s/n / Bloco J - Campus do Gragoatá - São Domingos - Niterói."
-             }
+   "tutor": {
+             "nome"   : "Profª Rachel Bertol",
+             "lattes" : "http://lattes.cnpq.br/6048950036951543",
+             "webpage": "",
+             "email"  : "rachelbertol@id.uff.br",
+             "local"  : "Rua Professor Marcos Waldemar de Freitas Reis, s/n / Bloco J - Campus do Gragoatá - São Domingos - Niterói."
+            }
   }
  ]
 }

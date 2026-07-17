@@ -15,13 +15,13 @@
              "campus"   : "Rio das Ostras",
              "local"    : "Rua Recife, s/n - Polo Universitário de Rio das Ostras - Jardim Bela Vista - Rio das Ostras."
             },
-   "tutor" : {
-              "nome"   : "Profª Marcela de Abreu Moniz",
-              "lattes" : "http://lattes.cnpq.br/6337291798996641",
-              "webpage": "",
-              "email"  : "marcelamoniz@id.uff.br",
-              "local"  : ""
-             }
+   "tutor": {
+             "nome"   : "Profª Marcela de Abreu Moniz",
+             "lattes" : "http://lattes.cnpq.br/6337291798996641",
+             "webpage": "",
+             "email"  : "marcelamoniz@id.uff.br",
+             "local"  : ""
+            }
   },
   {
    "grupo": {
@@ -38,13 +38,13 @@
              "campus"   : "Niterói",
              "local"    : "Rua Dr. Mario Vianna, 523 - Santa Rosa - Niterói."
             },
-   "tutor" : {
-              "nome"   : "Profª Thelma de Barros Machado",
-              "lattes" : "http://lattes.cnpq.br/0278676646547071",
-              "webpage": "",
-              "email"  : "thelma_machado@id.uff.br",
-              "local"  : "Laboratório de Controle de Qualidade Físico-Químico de Medicamentos e Fitomedicamentos - Faculdade de Farmácia - Niterói."
-             }
+   "tutor": {
+             "nome"   : "Profª Thelma de Barros Machado",
+             "lattes" : "http://lattes.cnpq.br/0278676646547071",
+             "webpage": "",
+             "email"  : "thelma_machado@id.uff.br",
+             "local"  : "Laboratório de Controle de Qualidade Físico-Químico de Medicamentos e Fitomedicamentos - Faculdade de Farmácia - Niterói."
+            }
   },
   {
    "grupo": {
@@ -61,13 +61,13 @@
              "campus"   : "Niterói",
              "local"    : "Rua Professor Marcos Waldemar de Freitas Reis, s/n / Bloco O / Sala 409 - Campus do Gragoatá - São Domingos - Niterói."
             },
-   "tutor" : {
-              "nome"   : "Profª Renata Vereza",
-              "lattes" : "http://lattes.cnpq.br/1642988193944431",
-              "webpage": "",
-              "email"  : "renata.vereza@gmail.com",
-              "local"  : ""
-             }
+   "tutor": {
+             "nome"   : "Profª Renata Vereza",
+             "lattes" : "http://lattes.cnpq.br/1642988193944431",
+             "webpage": "",
+             "email"  : "renata.vereza@gmail.com",
+             "local"  : ""
+            }
   },
   {
    "grupo": {
@@ -84,13 +84,13 @@
              "campus"   : "Niterói",
              "local"    : "Rua Professor Marcos Waldemar de Freitas Reis, s/n / Bloco D - Campus do Gragoatá - São Domingos - Niterói."
             },
-   "tutor" : {
-              "nome"   : "Profª Mônica Vasconcellos",
-              "lattes" : "http://lattes.cnpq.br/3715055413703709",
-              "webpage": "",
-              "email"  : "monicavasconcellos@id.uff.br",
-              "local"  : ""
-             }
+   "tutor": {
+             "nome"   : "Profª Mônica Vasconcellos",
+             "lattes" : "http://lattes.cnpq.br/3715055413703709",
+             "webpage": "",
+             "email"  : "monicavasconcellos@id.uff.br",
+             "local"  : ""
+            }
   }
  ]
 }

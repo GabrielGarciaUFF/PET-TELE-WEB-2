@@ -1,7 +1,7 @@
 {
  "grupos_propet_ies_conexao_uff": [
   {
-   "grupo":{
+   "grupo": {
              "nome": "ProPET-Ciranda Rural (Interdisciplinar)",
              "origem": "IES",
              "tipo": "CONEXAO",
@@ -14,14 +14,14 @@
              "email": "",
              "campus": "Campos dos Goytacazes",
              "local": "Rua José do Patrocínio, 71, Polo Universitário de Campos dos Goytacazes, Centro, Campos dos Goytacazes."
-                },
-    "tutor": {
+            },
+   "tutor": {
              "nome": "Profª Maria do Socorro B. de Lima",
              "lattes": "",
              "webpage": "",
              "email": "msblima@id.uff.br",
              "local": ""
             }
-    }
-  ]
+  }
+ ]
 }
